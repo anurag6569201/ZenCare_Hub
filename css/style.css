@@ -73,6 +73,7 @@ html,body{
     background-image: url(../image/zen_main.png);
     background-repeat: no-repeat;
     background-position: center center;
+    object-fit: cover;
     padding: 4em;
     background-attachment: fixed;
 }
@@ -132,10 +133,43 @@ html,body{
     position: relative;
     background-color: #c9d5d3;
 }
+
+/* data */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 2em;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+}
+
+th {
+    background-color: #154A40;
+    color: white;
+    text-align: center;
+}
+.table tr td:nth-child(2){
+    text-align: center;
+}
+tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+tr:hover {
+    background-color: #8fc5bb;
+}
+tr:nth-child(even):hover {
+    background-color: #8fc5bb;
+}
 /* facilities */
 #facilities{
     position: relative;
 }
+#data-section h1,
 #about h2,
 #contact h2,
 #blog h2,
@@ -270,5 +304,8 @@ footer{
 @media (max-width: 575px) {
     html,body{
         font-size: 8px;
+    }
+    .bg_image{
+        background-attachment: scroll;
     }
 }
