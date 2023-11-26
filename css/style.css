@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Agbalumo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Agbalumo&family=Philosopher&display=swap');
 
 *{
     padding: 0;
@@ -6,7 +6,7 @@
     box-sizing: border-box;
     scroll-behavior: smooth;
     scroll-padding: 4em;
-    font-family: 'Agbalumo', sans-serif;
+    font-family: 'Philosopher', sans-serif;
 }
 hr{
     display: none;
