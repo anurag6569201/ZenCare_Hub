@@ -74,9 +74,10 @@ html,body{
     background-repeat: no-repeat;
     background-position: center center;
     padding: 4em;
+    background-attachment: fixed;
 }
 .bg_image h1{
-    position: absolute;
+    width: 100%;
     font-size: 5em;
     font-weight: 700;
     color: #09362e;
@@ -249,7 +250,20 @@ footer{
     font-size: 2em;
     text-shadow: 0 0 0.5em #8fc5bb;
 }
-
+/* starting animation */
+.bg_image h1{
+    animation-name: maintext;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+}
+@keyframes maintext {
+    0%{
+        transform: translateX(-100%);
+    }
+    100%{
+        transform: translateX(0%);
+    }
+}
 
 
 /* responsiveness */
