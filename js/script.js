@@ -82,3 +82,18 @@ var diseases = [
     var diseaseTableRow = createDiseaseTableRow(disease);
     diseaseTableBody.appendChild(diseaseTableRow);
   });
+
+
+  // loader
+const loader = document.getElementById("loader");
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    var isWebkit = 'WebkitAppearance' in document.documentElement.style;
+    if (isWebkit) {
+      var styleElement = document.createElement('style');
+      styleElement.textContent = "::-webkit-scrollbar { width: 12px; }";
+      document.head.appendChild(styleElement);
+    }
+    loader.style.display = "none";
+  }, 2000);
+});
