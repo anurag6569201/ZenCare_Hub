@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Agbalumo&family=Philosopher&display=swap');
-::-webkit-scrollbar { width: 0px;
+::-webkit-scrollbar { width: 8px;
 }
 ::-webkit-scrollbar-track {
-   background: transparent;
+    background:#154a40;
 }
  
  ::-webkit-scrollbar-thumb {
@@ -19,20 +19,6 @@
     scroll-behavior: smooth;
     scroll-padding: 4em;
     font-family: 'Philosopher', sans-serif;
-}
-#loader{
-    width: 100%;
-    height: 100vh;
-    background-color: black;
-    background-image: url(../image/loader.gif);
-    background-repeat: no-repeat;
-    background-size: 80vmin;
-    background-position: center center;
-    display: block;
-    z-index: 100000;
-    overflow: hidden;
-    position: fixed;
-    top: 0;
 }
 hr{
     display: none;
@@ -58,7 +44,6 @@ html,body{
     padding-bottom: 0;
     padding-top: 0;
     z-index: 1000;
-    box-shadow: 0 0 1em 1em #154a40,0 0 1.5em 2em rgba(21, 76, 66,0.7);
 }
 .navbar-brand{
     display: flex;
@@ -74,28 +59,12 @@ html,body{
     font-size: 3em;
     font-weight: 700;
 }
-.navbar-nav{
-    gap: 1em;
-    color: white;
-    font-weight: 500;
-}
-.navbar-nav{
-    padding-right: 2em;
-}
-.navbar-nav li{
-    font-size: 1.2em;
-}
-.navbar-nav li:hover{
-    color: #87c9bd;
-    text-shadow: 0 0 0.5em #8fc5bb;
-}
 .bg_image{
     width: 100%;
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: left;
-    box-shadow: 0 0 30em 10em #154a40 inset;
     background-image: url(../image/zen_main.png);
     background-repeat: no-repeat;
     background-position: center center;
@@ -113,6 +82,13 @@ html,body{
     font-size: 0.8em;
     font-weight: 500;
     color: #ffffff;
+}
+#parallel_text #hospital_addres{
+    margin-top: .3em;
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    color: #e92428;
 }
 #contact form button,
 #blog .card-body a,
@@ -156,7 +132,6 @@ html,body{
 }
 /* about us */
 #about{
-    position: relative;
     background-color: #c9d5d3;
 }
 
@@ -190,6 +165,13 @@ tr:hover {
 }
 tr:nth-child(even):hover {
     background-color: #8fc5bb;
+}
+#data-section{
+    position: relative;
+}
+.mt-4{
+    padding-top: 0!important;
+    margin-top: 0!important;
 }
 /* facilities */
 #facilities{
@@ -231,6 +213,8 @@ tr:nth-child(even):hover {
 }
 #blog .row .card,
 .card-deck .card{
+    transition: .4s;
+    cursor: pointer;
     border: 2px solid #154A40;
     padding: 0.5em;
     background-color: #154A40;
@@ -248,6 +232,10 @@ tr:nth-child(even):hover {
 #blog{
     margin-top: 2em;
     background-color: #c9d5d3;
+}
+#blog .row{
+    padding-bottom: 1em!important;
+    padding-top: 1em!important;
 }
 #blog img{
     border-radius: 1em;
@@ -304,6 +292,9 @@ tr:nth-child(even):hover {
 .custom-shape-divider-bottom-1700995859 .shape-fill {
     fill: #154A40;
 }
+.mt-4 {
+    padding-top: 1em!important;
+}
 /* footer */
 footer{
     border: none;
@@ -326,6 +317,12 @@ footer{
 }
 
 
+/* hover styles */
+#blog .row .card:hover, .card-deck .card:hover{
+    scale: 1.02;
+    box-shadow: 10px 10px 20px 6px #154a40;
+}
+
 /* responsiveness */
 @media (max-width: 575px) {
     html,body{
@@ -334,4 +331,9 @@ footer{
     .bg_image{
         background-attachment: scroll;
     }
+    #blog .row .card:hover, .card-deck .card:hover{
+        scale: 1.02;
+        box-shadow: 6px 6px 13px 6px #154a40;
+    }
 }
+
