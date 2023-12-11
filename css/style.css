@@ -1,21 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Agbalumo&family=Philosopher&display=swap');
-::-webkit-scrollbar { width: 8px;
-}
-::-webkit-scrollbar-track {
-    background:#154a40;
-}
- 
- ::-webkit-scrollbar-thumb {
-   background:linear-gradient(#154a40,white);
-   border-radius: 12px;
- }
- ::-webkit-scrollbar-thumb:hover {
-   background-color: #87c9bd;
- }
+
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    border: none;
     scroll-behavior: smooth;
     scroll-padding: 4em;
     font-family: 'Philosopher', sans-serif;
@@ -27,6 +16,12 @@ html,body{
     font-size: 10px;
     overflow-x: hidden;
     background-color: #c9d5d3;
+}
+body::-webkit-scrollbar{
+    width: 0px;
+}
+html::-webkit-scrollbar{
+    width: 0px;
 }
 .bg-dark{
     background:#154a40!important;
@@ -91,7 +86,7 @@ html,body{
     color: #e92428;
 }
 #contact form button,
-#blog .card-body a,
+#blog .card__content a,
 .bg_image button{
     background-color: #ffffff;
     font-size: .5em;
@@ -104,7 +99,7 @@ html,body{
     transition: 0.4s;
 }
 #contact form button:hover,
-#blog .card-body a:hover,
+#blog .card__content a:hover,
 .bg_image button:hover{
     border: 2px solid #ffffff;
     background-color: #154a40;
@@ -211,15 +206,73 @@ tr:nth-child(even):hover {
 .card-deck{
     font-size: 2em;
 }
-#blog .row .card,
-.card-deck .card{
-    transition: .4s;
-    cursor: pointer;
-    border: 2px solid #154A40;
-    padding: 0.5em;
-    background-color: #154A40;
-    border-radius: 1em;
-    color: white;
+.card {
+  position: relative;
+  cursor: pointer;
+  margin-top: 2em;
+  max-width: 400px;
+  width: 300px;
+  min-height: 280px;
+  background-color: #597e77;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  perspective: 1000px;
+  box-shadow: 0 0 0 5px #154a40;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.card img{
+  width: 400px;
+  min-height: 300px;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 10px 10px 20px 6px #154a40;
+}
+
+.card__content {
+  position: absolute;
+  border-radius:10px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color:#154A40;
+  transform: rotateX(-90deg);
+  transform-origin: bottom;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.card__content p:nth-child(1){
+  color:white;
+  font-weight:700;
+}
+.card__description,
+.card_detail{
+  color:rgba(255,255,255,0.8);
+  font-weight:300;
+}
+.card:hover .card__content {
+  transform: rotateX(0deg);
+}
+
+.card__title {
+  margin: 0;
+  font-size: 24px;
+  color: #333;
+  font-weight: 700;
+}
+
+.card:hover svg {
+  scale: 0;
+}
+.card-deck{
+    align-items: center;
 }
 .card-deck .card img{
     border-radius: 1em;
@@ -228,6 +281,7 @@ tr:nth-child(even):hover {
     color: white;
     font-weight: 800;
 }
+
 /* blogs */
 #blog{
     margin-top: 2em;
@@ -236,6 +290,14 @@ tr:nth-child(even):hover {
 #blog .row{
     padding-bottom: 1em!important;
     padding-top: 1em!important;
+}
+#blog .row{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+#blog .card{
+    margin-top: 0;
 }
 #blog img{
     border-radius: 1em;
@@ -318,10 +380,6 @@ footer{
 
 
 /* hover styles */
-#blog .row .card:hover, .card-deck .card:hover{
-    scale: 1.02;
-    box-shadow: 10px 10px 20px 6px #154a40;
-}
 
 /* responsiveness */
 @media (max-width: 575px) {
@@ -330,10 +388,6 @@ footer{
     }
     .bg_image{
         background-attachment: scroll;
-    }
-    #blog .row .card:hover, .card-deck .card:hover{
-        scale: 1.02;
-        box-shadow: 6px 6px 13px 6px #154a40;
     }
 }
 
